@@ -1,4 +1,4 @@
-package weatherforecast;
+package com.aeolus.app;
 
 public class SearchProcessing {
 }
