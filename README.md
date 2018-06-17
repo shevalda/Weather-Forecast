@@ -52,10 +52,10 @@ Sudah:
 
 Sedang:
  - MainMenuView.java
+ - Main.java
 
 Belum:
 - ResultView.java
 - SearchView.java
-- Main.java
 - ResultProcessing.java
 - SearchProcessing.java

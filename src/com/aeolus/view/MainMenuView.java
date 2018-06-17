@@ -3,6 +3,8 @@ package com.aeolus.view;
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.image.BufferedImage;
@@ -21,12 +23,10 @@ public class MainMenuView extends JFrame {
     private JLabel logoImage, credit;
     private JPanel mainPanel;
 
-    public static void main(String[] args) {
-        new MainMenuView();
-    }
+    private boolean inputStatus = false;
 
     public MainMenuView() {
-        this.setSize(650, 500);
+        this.setSize(600, 375);
         this.setLocationRelativeTo(null);
         this.setResizable(false);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -38,59 +38,86 @@ public class MainMenuView extends JFrame {
         }
 
         mainPanel = new JPanel();
+        Box mainBox = Box.createVerticalBox();
+
+        mainBox.setMaximumSize(new Dimension(this.getWidth()+20, this.getHeight()));
+
+        mainBox.add(Box.createVerticalStrut(50));
 
         /* logo */
         String logoImageName = "app-logo.png";
-        try {
-            BufferedImage logo = ImageIO.read(new File(currentDir+ resourcePath + logoImageName));
-            logoImage = new JLabel(new ImageIcon(logo));
-            mainPanel.add(logoImage);
-        } catch (IOException e) {
-            System.out.println("unable to load " + logoImageName);
-        }
+
+        logoImage = new JLabel();
+        logoImage.setIcon(new ImageIcon(new ImageIcon(currentDir + resourcePath + logoImageName).getImage().getScaledInstance(300, 150, Image.SCALE_DEFAULT)));
+        logoImage.setAlignmentX(Component.CENTER_ALIGNMENT);
+        Box logoBox = Box.createHorizontalBox();
+        logoBox.add(logoImage);
+        mainBox.add(logoBox);
+        mainBox.add(Box.createVerticalStrut(15));
 
         /* search field */
-        citySearchField = new JTextField(searchDefaultText,25);
+        Box searchFieldBox = Box.createHorizontalBox();
+
+        citySearchField = new JTextField(searchDefaultText, 40);
         citySearchField.setHorizontalAlignment(JTextField.CENTER);
         citySearchField.setForeground(Color.GRAY);
-        citySearchField.addMouseListener(new SearchFieldListener());
-        mainPanel.add(citySearchField);
+
+        citySearchField.addMouseListener(new ListenForMouse());
+        citySearchField.addKeyListener(new ListenForKeys());
+        searchFieldBox.add(citySearchField);
+        searchFieldBox.add(Box.createHorizontalStrut(2));
 
         /* search button */
         String searchImageName = "search.png";
         try {
             BufferedImage searchicon = ImageIO.read(new File(currentDir + resourcePath + searchImageName));
             searchButton = new JButton(new ImageIcon(searchicon));
-            mainPanel.add(searchButton);
+            searchButton.addMouseListener(new ListenForMouse());
+            searchFieldBox.add(searchButton);
         } catch (IOException e) {
             System.out.println("failed to find " + searchImageName);
         }
 
+        mainBox.add(searchFieldBox);
+        mainBox.add(Box.createVerticalStrut(60));
+
         /* credits */
         credit = new JLabel("created by Shevalda Gracielira");
-        mainPanel.add(credit);
+        Box creditBox = Box.createHorizontalBox();
+        creditBox.add(credit);
+        mainBox.add(creditBox);
 
-        mainPanel.addMouseListener(new SearchFieldListener());
+        mainPanel.addMouseListener(new ListenForMouse());
 
+        mainPanel.add(mainBox);
         this.add(mainPanel);
         this.setVisible(true);
+
+        searchButton.requestFocusInWindow();
     }
 
-    private class SearchFieldListener implements MouseListener {
-        /**
-         * Invoked when the mouse button has been clicked (pressed
-         * and released) on a component.
-         *
-         * @param e the event to be processed
-         */
+    public String getSearchText() {
+        return citySearchField.getText();
+    }
+
+    public boolean isInputSuccess() {
+        return inputStatus;
+    }
+
+    private void searchTextChecking() {
+        if (citySearchField.getText().equals(blank) || citySearchField.getText().equals(searchDefaultText)) {
+            System.out.println("input error");
+        } else {
+            System.out.println("input success");
+            inputStatus = true;
+            System.out.println(inputStatus);
+        }
+    }
+
+    private class ListenForMouse implements MouseListener {
         @Override
         public void mouseClicked(MouseEvent e) {}
 
-        /**
-         * Invoked when a mouse button has been pressed on a component.
-         *
-         * @param e the event to be processed
-         */
         @Override
         public void mousePressed(MouseEvent e) {
             if (e.getSource() == citySearchField) {
@@ -98,35 +125,44 @@ public class MainMenuView extends JFrame {
                     citySearchField.setText("");
                     citySearchField.setForeground(Color.BLACK);
                 }
-            } else if (e.getSource() == mainPanel && citySearchField.getText().equals(blank)) {
-                citySearchField.setForeground(Color.GRAY);
-                citySearchField.setText(searchDefaultText);
+            } else if (e.getSource() == searchButton) {
+                searchTextChecking();
+            }
+            else {
+                if (citySearchField.getText().equals(blank)) {
+                    citySearchField.setForeground(Color.GRAY);
+                    citySearchField.setText(searchDefaultText);
+                }
             }
         }
 
-        /**
-         * Invoked when a mouse button has been released on a component.
-         *
-         * @param e the event to be processed
-         */
         @Override
         public void mouseReleased(MouseEvent e) {}
 
-        /**
-         * Invoked when the mouse enters a component.
-         *
-         * @param e the event to be processed
-         */
         @Override
         public void mouseEntered(MouseEvent e) {}
 
-        /**
-         * Invoked when the mouse exits a component.
-         *
-         * @param e the event to be processed
-         */
         @Override
         public void mouseExited(MouseEvent e) {}
     }
 
+    private class ListenForKeys implements KeyListener {
+        @Override
+        public void keyTyped(KeyEvent e) {}
+
+        @Override
+        public void keyPressed(KeyEvent e) {
+            if (e.getKeyChar() == '\n') {
+                searchTextChecking();
+            } else {
+                if (citySearchField.getText().equals(searchDefaultText)) {
+                    citySearchField.setForeground(Color.BLACK);
+                    citySearchField.setText(blank);
+                }
+            }
+        }
+
+        @Override
+        public void keyReleased(KeyEvent e) {}
+    }
 }
