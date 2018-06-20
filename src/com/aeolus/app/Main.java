@@ -1,16 +1,18 @@
 package com.aeolus.app;
 
-import com.aeolus.view.MainMenuView;
+import com.aeolus.view.MainFrame;
+
+import javax.swing.*;
 
 public class Main {
+
     public static void main(String[] args) {
-        new Main();
+        SwingUtilities.invokeLater(new Runnable() {
+            @Override
+            public void run() {
+                new MainFrame();
+            }
+        });
     }
 
-    public Main() {
-        MainMenuView mainMenuView = new MainMenuView();
-        if (mainMenuView.isInputSuccess()) {
-            System.out.println("input: " + mainMenuView.getSearchText());
-        }
-    }
 }
