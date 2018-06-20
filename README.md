@@ -49,13 +49,14 @@ This package structure is used to categorize based on the files functionalities.
 ## Project Checklist
 
 Sudah:
+- PartPanel.java
 
 Sedang:
- - MainMenuView.java
  - Main.java
+ - MainFrame.java
+ - SearchBar.java
+ - ResultSection.java
 
 Belum:
-- ResultView.java
-- SearchView.java
 - ResultProcessing.java
 - SearchProcessing.java
