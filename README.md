@@ -34,6 +34,8 @@ src
 		aeolus
 			app
 			view
+			    current
+			    future
 ```
 
 **lib** - libraries used by the application
@@ -42,21 +44,28 @@ src
 
 **src/com/aeolus/app** - main java files
 
-**src/com/aeolus/view** - java files for application (using Java Swing)
+**src/com/aeolus/view** - java swing frames and interface for the application
+
+**src/com/aeolus/view/current** - java swing panels for the main frame (MainFrame.java)
+
+**src/com/aeolus/view/future** - java swing panels for the "future forecast" frame (FutureForecast.java) 
 
 This package structure is used to categorize based on the files functionalities.
 
 ## Project Checklist
 
 Sudah:
-- PartPanel.java
+ - PartPanel.java
+ - SearchBar.java
+ - Main.java
 
 Sedang:
- - Main.java
  - MainFrame.java
- - SearchBar.java
  - ResultSection.java
+ - SearchProcessor.java
 
 Belum:
-- ResultProcessing.java
-- SearchProcessing.java
+ - FutureForecastProcessor.java
+ - ThreeHourForecast.java
+ - FutureForecastFrame.java
+ 
