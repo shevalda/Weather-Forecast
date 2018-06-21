@@ -33,7 +33,7 @@ public class MainFrame {
     private String resultText = "Results for";
 
     public MainFrame() {
-        frame.setSize(600, 600);
+        frame.setSize(500, 600);
         frame.setLocationRelativeTo(null);
 //        frame.setResizable(false);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

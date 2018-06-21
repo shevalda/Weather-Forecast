@@ -1,5 +1,9 @@
 package com.aeolus.app;
 
 public class SearchProcessor {
-    String api_key = "";
+    private String city_name;
+
+    public SearchProcessor(String city_name) {
+        this.city_name = city_name;
+    }
 }

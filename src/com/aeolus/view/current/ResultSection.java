@@ -6,9 +6,7 @@ import net.miginfocom.swing.MigLayout;
 import javax.swing.*;
 import java.awt.*;
 
-public class ResultSection implements PartPanel {
-    private JPanel panel = new JPanel();
-
+public class ResultSection extends PartPanel {
     private String currentDir, resourcePath, weatherResPath;
 
     public ResultSection(JLabel label_result, String currentDir, String resourcePath, String weatherResPath) {
@@ -17,23 +15,17 @@ public class ResultSection implements PartPanel {
         this.weatherResPath = weatherResPath;
         label_result.setForeground(Color.WHITE);
 
-        panel.setLayout(new MigLayout());
-        panel.setBackground(Color.DARK_GRAY);
+        getPanel().setLayout(new MigLayout());
+        getPanel().setBackground(Color.DARK_GRAY);
 
         label_result.setVisible(false);
-        panel.add(label_result, "span, gapbottom 7");
-
-    }
-
-    @Override
-    public JPanel getPanel() {
-        return panel;
+        getPanel().add(label_result, "span, gapbottom 7");
     }
 
     public JPanel newWeatherDetail() {
+        // variable jadi parameter
         JPanel panel_weather = new JPanel();
         panel_weather.setLayout(new MigLayout("wrap 3"));
-//        panel_weather.setBorder(BorderFactory.createEtchedBorder());
         panel_weather.setBackground(Color.LIGHT_GRAY);
 
         /* weather icon */
@@ -106,14 +98,14 @@ public class ResultSection implements PartPanel {
     }
 
     public void addResultPanel(JPanel result_panel) {
-        panel.add(result_panel, "span, pushx, growx, gapbottom 5");
+        getPanel().add(result_panel, "span, pushx, growx, gapbottom 5");
     }
 
     public void removeAllResultList() {
-        Component[] components = panel.getComponents();
+        Component[] components = getPanel().getComponents();
         for (Component c : components) {
             if (c instanceof JPanel) {
-                panel.remove(c);
+                getPanel().remove(c);
             }
         }
 //        panel.revalidate();

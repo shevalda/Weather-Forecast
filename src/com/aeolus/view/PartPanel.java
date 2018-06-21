@@ -2,6 +2,10 @@ package com.aeolus.view;
 
 import javax.swing.*;
 
-public interface PartPanel {
-    public JPanel getPanel();
+public class PartPanel {
+    private JPanel panel = new JPanel();
+
+    public JPanel getPanel() {
+        return panel;
+    }
 }
