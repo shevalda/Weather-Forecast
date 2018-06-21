@@ -2,33 +2,29 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="981b9d9b-64c6-44a2-849e-65b546adbd26" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/miglayout_4_0_swing.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Weather-Forecast/com/aeolus/app/Main$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Weather-Forecast/com/aeolus/app/Main.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Weather-Forecast/com/aeolus/app/ResultProcessing.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Weather-Forecast/com/aeolus/app/SearchProcessing.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Weather-Forecast/com/aeolus/view/MainFrame.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Weather-Forecast/com/aeolus/view/MainMenuView$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Weather-Forecast/com/aeolus/view/MainMenuView$ListenForKeys.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Weather-Forecast/com/aeolus/view/MainMenuView$ListenForMouse.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Weather-Forecast/com/aeolus/view/MainMenuView.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Weather-Forecast/com/aeolus/view/PartPanel.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Weather-Forecast/com/aeolus/view/ResultSection.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Weather-Forecast/com/aeolus/view/SearchBar$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Weather-Forecast/com/aeolus/view/SearchBar$ListenForKeys.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Weather-Forecast/com/aeolus/view/SearchBar$ListenForMouse.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Weather-Forecast/com/aeolus/view/SearchBar.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/aeolus/view/MainFrame.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/aeolus/view/PartPanel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/aeolus/view/ResultSection.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/aeolus/view/SearchBar.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/aeolus/app/FutureForecastProcessor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/aeolus/view/FutureForecastFrame.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/aeolus/view/current/ResultSection.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/aeolus/view/current/SearchBar.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/aeolus/view/future/ThreeHourForecast.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Weather-Forecast.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Weather-Forecast.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/aeolus/app/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/aeolus/app/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/aeolus/view/MainMenuView.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/aeolus/view/ResultView.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/aeolus/view/SearchView.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Weather-Forecast/com/aeolus/view/MainFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Weather-Forecast/com/aeolus/view/MainFrame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Weather-Forecast/com/aeolus/view/MainMenuView$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Weather-Forecast/com/aeolus/view/MainMenuView$ListenForKeys.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Weather-Forecast/com/aeolus/view/MainMenuView$ListenForMouse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Weather-Forecast/com/aeolus/view/MainMenuView.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Weather-Forecast/com/aeolus/view/ResultSection.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Weather-Forecast/com/aeolus/view/ResultSection.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Weather-Forecast/com/aeolus/view/SearchBar$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Weather-Forecast/com/aeolus/view/SearchBar$ListenForKeys.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Weather-Forecast/com/aeolus/view/SearchBar$ListenForMouse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Weather-Forecast/com/aeolus/view/SearchBar.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Weather-Forecast/com/aeolus/view/SearchBar.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/aeolus/app/ResultProcessing.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/aeolus/app/SearchProcessing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/aeolus/app/SearchProcessor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/aeolus/view/MainFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/aeolus/view/MainFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/aeolus/view/ResultSection.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/aeolus/view/SearchBar.java" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -45,65 +41,51 @@
       </map>
     </option>
   </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/Weather_Forecast$Main.ic" NAME="Main Coverage Results" MODIFIED="1529501899478" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.aeolus.app.*</FILTER>
+    </SUITE>
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/aeolus/app/Main.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="368">
-              <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#253#254#0" expanded="true" />
-                <element signature="e#300#301#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MainFrame.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/aeolus/view/MainFrame.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="717">
-              <caret line="44" column="44" selection-start-line="44" selection-start-column="44" selection-end-line="44" selection-end-column="44" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="439">
-                <caret line="60" selection-start-line="60" selection-end-line="60" />
+              <first_editor relative-caret-position="299">
+                <caret line="13" selection-start-line="13" selection-end-line="13" />
               </first_editor>
               <second_editor />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ResultSection.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/aeolus/view/ResultSection.java">
+      <file leaf-file-name="MainFrame.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/aeolus/view/MainFrame.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="713">
-              <caret line="36" column="66" selection-start-line="36" selection-start-column="66" selection-end-line="36" selection-end-column="66" />
+            <state relative-caret-position="239">
+              <caret line="150" selection-start-line="150" selection-end-line="150" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#571#572#0" expanded="true" />
-                <element signature="e#599#600#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SearchBar.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/aeolus/view/SearchBar.java">
+      <file leaf-file-name="SearchProcessor.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/aeolus/app/SearchProcessor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="23">
-              <caret line="42" column="37" selection-start-line="42" selection-start-column="37" selection-end-line="42" selection-end-column="37" />
+            <state relative-caret-position="69">
+              <caret line="3" column="24" selection-start-line="3" selection-start-column="24" selection-end-line="3" selection-end-column="24" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ResultSection.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/aeolus/view/current/ResultSection.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2622">
+              <caret line="122" column="1" selection-start-line="122" selection-start-column="1" selection-end-line="122" selection-end-column="1" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -116,8 +98,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -126,6 +108,9 @@
       <find>SEARCHFIELDLIS</find>
       <find>input er</find>
       <find>setbor</find>
+      <find>color.blue</find>
+      <find>direct</find>
+      <find>etche</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -153,11 +138,14 @@
         <option value="$PROJECT_DIR$/src/com/aeolus/view/Result.java" />
         <option value="$PROJECT_DIR$/src/com/aeolus/view/PanelParts.java" />
         <option value="$PROJECT_DIR$/src/com/aeolus/view/PartPanel.java" />
-        <option value="$PROJECT_DIR$/src/com/aeolus/view/SearchBar.java" />
-        <option value="$PROJECT_DIR$/src/com/aeolus/view/MainFrame.java" />
-        <option value="$PROJECT_DIR$/src/com/aeolus/view/ResultSection.java" />
         <option value="$PROJECT_DIR$/src/com/aeolus/app/Main.java" />
+        <option value="$PROJECT_DIR$/src/com/aeolus/view/SearchBar.java" />
+        <option value="$PROJECT_DIR$/src/com/aeolus/view/DetailSection.java" />
+        <option value="$PROJECT_DIR$/src/com/aeolus/view/ResultSection.java" />
+        <option value="$PROJECT_DIR$/src/com/aeolus/view/MainFrame.java" />
+        <option value="$PROJECT_DIR$/src/com/aeolus/view/FutureForecastFrame.java" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/src/com/aeolus/app/SearchProcessor.java" />
       </list>
     </option>
   </component>
@@ -187,8 +175,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
-      <pane id="Scope" />
       <pane id="PackagesPane">
         <subPane>
           <expand>
@@ -200,6 +186,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -228,12 +215,36 @@
               <item name="Weather-Forecast" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="aeolus" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Weather-Forecast" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Weather-Forecast" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="aeolus" type="462c0819:PsiDirectoryNode" />
               <item name="view" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Weather-Forecast" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Weather-Forecast" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="aeolus" type="462c0819:PsiDirectoryNode" />
+              <item name="view" type="462c0819:PsiDirectoryNode" />
+              <item name="current" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Weather-Forecast" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Weather-Forecast" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="aeolus" type="462c0819:PsiDirectoryNode" />
+              <item name="view" type="462c0819:PsiDirectoryNode" />
+              <item name="future" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -246,6 +257,11 @@
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="settings.editor.selected.configurable" value="configurable.group.other" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.aeolus.view.current" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -271,17 +287,6 @@
         </pattern>
       </extension>
     </configuration>
-    <configuration name="MainMenuView (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.aeolus.view.MainMenuView" />
-      <module name="Weather-Forecast" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.aeolus.view.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-    </configuration>
     <configuration name="MainMenuView" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="weatherforecast.view.MainMenuView" />
       <module name="Weather-Forecast" />
@@ -289,6 +294,17 @@
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="weatherforecast.view.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+    </configuration>
+    <configuration name="MainMenuView" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.aeolus.view.MainMenuView" />
+      <module name="Weather-Forecast" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.aeolus.view.current.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -348,13 +364,11 @@
     <list>
       <item itemvalue="Application.MainTest" />
       <item itemvalue="Application.MainMenuView" />
-      <item itemvalue="Application.MainMenuView (1)" />
       <item itemvalue="Application.Main" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
-        <item itemvalue="Application.MainMenuView (1)" />
         <item itemvalue="Application.MainMenuView" />
         <item itemvalue="Application.MainTest" />
       </list>
@@ -377,12 +391,14 @@
       <workItem from="1529241489303" duration="7182000" />
       <workItem from="1529335531335" duration="3586000" />
       <workItem from="1529411472029" duration="9435000" />
-      <workItem from="1529468711193" duration="432000" />
+      <workItem from="1529468711193" duration="6147000" />
+      <workItem from="1529494470539" duration="12850000" />
+      <workItem from="1529553564671" duration="230000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="49367000" />
+    <option name="totallyTimeSpent" value="68162000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -397,20 +413,20 @@
       <window_info anchor="bottom" id="Event Log" order="1" side_tool="true" weight="0.3287879" />
       <window_info anchor="right" id="Maven Projects" order="1" weight="0.3295302" />
       <window_info anchor="bottom" id="Database Changes" order="4" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run" order="8" weight="0.17727272" />
-      <window_info anchor="bottom" id="Version Control" order="5" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="5" visible="true" weight="0.3287879" />
+      <window_info anchor="bottom" id="Run" order="8" weight="0.18030304" />
       <window_info anchor="bottom" id="CheckStyle" order="2" />
       <window_info anchor="bottom" id="Terminal" order="0" />
       <window_info id="Capture Tool" order="4" />
       <window_info id="Designer" order="0" />
-      <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.18120806" />
+      <window_info content_ui="combo" id="Project" order="5" visible="true" weight="0.16375838" />
       <window_info anchor="right" id="Database" order="2" />
       <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="7" weight="0.25" />
       <window_info id="UI Designer" order="2" />
       <window_info anchor="right" id="Theme Preview" order="4" />
-      <window_info anchor="bottom" id="Debug" order="9" weight="0.4" />
       <window_info id="Favorites" order="3" side_tool="true" />
+      <window_info anchor="bottom" id="Debug" order="9" weight="0.4" />
       <window_info anchor="bottom" id="Messages" order="3" weight="0.3287879" />
       <window_info anchor="bottom" id="Inspection" order="11" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="6" type="SLIDING" weight="0.4" />
@@ -449,25 +465,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/aeolus/view/ResultSection.java">
+    <entry file="file://$PROJECT_DIR$/src/com/aeolus/view/current/ResultSection.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="713">
           <caret line="36" column="66" selection-start-line="36" selection-start-column="66" selection-end-line="36" selection-end-column="66" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#571#572#0" expanded="true" />
-            <element signature="e#599#600#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/aeolus/view/SearchBar.java">
+    <entry file="file://$PROJECT_DIR$/src/com/aeolus/view/current/SearchBar.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="713">
           <caret line="42" column="37" selection-start-line="42" selection-start-column="37" selection-end-line="42" selection-end-column="37" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -493,13 +504,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/aeolus/view/MainMenuView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2944">
-          <caret line="141" column="63" lean-forward="true" selection-start-line="141" selection-start-column="63" selection-end-line="141" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/aeolus/view/MainMenuView.java" />
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
@@ -510,13 +515,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/aeolus/view/MainMenuView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2162">
-          <caret line="107" selection-start-line="107" selection-end-line="107" selection-end-column="109" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/aeolus/view/MainMenuView.java" />
     <entry file="file://$PROJECT_DIR$/src/com/aeolus/app/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="230">
@@ -539,13 +538,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/aeolus/view/MainMenuView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="782">
-          <caret line="43" column="63" selection-start-line="43" selection-start-column="63" selection-end-line="43" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/aeolus/view/MainMenuView.java" />
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
@@ -558,14 +551,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/aeolus/app/view/MainMenuView.java" />
     <entry file="file://$PROJECT_DIR$/src/test/MainTest.java" />
-    <entry file="file://$PROJECT_DIR$/src/com/aeolus/app/ResultProcessing.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="46">
-          <caret line="2" column="29" selection-start-line="2" selection-start-column="29" selection-end-line="2" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/aeolus/app/SearchProcessing.java">
+    <entry file="file://$PROJECT_DIR$/src/com/aeolus/app/MainProcessing.java" />
+    <entry file="file://$PROJECT_DIR$/src/com/aeolus/app/SearchProcessor.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="46">
           <caret line="2" column="29" selection-start-line="2" selection-start-column="29" selection-end-line="2" selection-end-column="29" />
@@ -594,13 +581,6 @@
     <entry file="file://$PROJECT_DIR$/src/weatherforecast/view/res/icon/README.md" />
     <entry file="file://$PROJECT_DIR$/src/test/CrunchifyJSONFileWrite.java" />
     <entry file="file://$PROJECT_DIR$/src/weatherforecast/MainMenuProcessing.java" />
-    <entry file="file://$PROJECT_DIR$/src/com/aeolus/app/SearchProcessing.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="46">
-          <caret line="2" column="29" selection-start-line="2" selection-start-column="29" selection-end-line="2" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/MainTest.java" />
     <entry file="jar://C:/Program Files/Java/jdk-10/lib/src.zip!/java.desktop/java/awt/event/MouseListener.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -610,13 +590,7 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/aeolus/app/view/MainMenuView.java" />
-    <entry file="file://$PROJECT_DIR$/src/com/aeolus/app/ResultProcessing.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="46">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/aeolus/app/MainProcessing.java" />
     <entry file="file://$PROJECT_DIR$/src/com/aeolus/view/SearchView.java" />
     <entry file="file://$PROJECT_DIR$/src/com/aeolus/view/ResultView.java" />
     <entry file="file://$PROJECT_DIR$/src/com/aeolus/view/PartPanel.java">
@@ -640,22 +614,42 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/aeolus/view/ResultSection.java">
+    <entry file="file://$PROJECT_DIR$/src/com/aeolus/view/MainMenuView.java" />
+    <entry file="file://$PROJECT_DIR$/src/com/aeolus/view/current/SearchBar.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="713">
-          <caret line="36" column="66" selection-start-line="36" selection-start-column="66" selection-end-line="36" selection-end-column="66" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#571#572#0" expanded="true" />
-            <element signature="e#599#600#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="316">
+          <caret line="30" column="47" lean-forward="true" selection-start-line="30" selection-start-column="47" selection-end-line="30" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/aeolus/view/DetailSection.java" />
+    <entry file="file://$PROJECT_DIR$/src/com/aeolus/view/currentForecast/future.java" />
+    <entry file="file://$PROJECT_DIR$/src/com/aeolus/view/FutureForecastFrame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="69">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/aeolus/app/MainFrameProccessor.java" />
+    <entry file="file://$PROJECT_DIR$/src/com/aeolus/app/FutureForecastProcessor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="46">
+          <caret line="2" column="36" selection-start-line="2" selection-start-column="36" selection-end-line="2" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/aeolus/view/future/ThreeHourForecast.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="46">
+          <caret line="2" column="30" selection-start-line="2" selection-start-column="30" selection-end-line="2" selection-end-column="30" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/aeolus/app/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+        <state relative-caret-position="291">
+          <caret line="16" selection-start-line="16" selection-end-line="16" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#253#254#0" expanded="true" />
@@ -664,40 +658,40 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/aeolus/view/SearchBar.java">
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="299">
+            <caret line="13" selection-start-line="13" selection-end-line="13" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/aeolus/view/current/ResultSection.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="42" column="37" selection-start-line="42" selection-start-column="37" selection-end-line="42" selection-end-column="37" />
+        <state relative-caret-position="2622">
+          <caret line="122" column="1" selection-start-line="122" selection-start-column="1" selection-end-line="122" selection-end-column="1" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/aeolus/app/SearchProcessor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="69">
+          <caret line="3" column="24" selection-start-line="3" selection-start-column="24" selection-end-line="3" selection-end-column="24" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/aeolus/view/MainFrame.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="717">
-          <caret line="44" column="44" selection-start-line="44" selection-start-column="44" selection-end-line="44" selection-end-column="44" />
+        <state relative-caret-position="239">
+          <caret line="150" selection-start-line="150" selection-end-line="150" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/aeolus/view/MainMenuView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1902">
-          <caret line="91" column="42" lean-forward="true" selection-start-line="91" selection-start-column="42" selection-end-line="92" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="439">
-            <caret line="60" selection-start-line="60" selection-end-line="60" />
-          </first_editor>
-          <second_editor />
         </state>
       </provider>
     </entry>
