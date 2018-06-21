@@ -16,9 +16,9 @@ public class ThreeHourForecast extends PartPanel {
 
         getPanel().setLayout(new MigLayout());
 
-//        for (int i = 0; i < 10; i++) {
-//            addWeatherTile();
-//        }
+        for (int i = 0; i < 10; i++) {
+            addWeatherTile();
+        }
     }
 
     private void addWeatherTile() {

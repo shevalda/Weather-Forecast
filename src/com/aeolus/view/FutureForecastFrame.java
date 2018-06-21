@@ -53,7 +53,4 @@ public class FutureForecastFrame {
         frame.setVisible(true);
     }
 
-    private void addCityCountryLabel(String city, String country) {
-
-    }
 }
