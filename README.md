@@ -33,6 +33,7 @@ src
 	com
 		aeolus
 			app
+			    holder
 			view
 			    current
 			    future
@@ -43,6 +44,8 @@ src
 **res** - resources (images) used in the application
 
 **src/com/aeolus/app** - main java files
+
+**src/com/aeolus/app/holder** - java classes to store OpenWeatherMap API result
 
 **src/com/aeolus/view** - java swing frames and interface for the application
 
@@ -58,14 +61,16 @@ Sudah:
  - PartPanel.java
  - SearchBar.java
  - Main.java
+ - CurrentWeather.java
+ - SearchProcessor.java
+ - Api.java
 
 Sedang:
  - MainFrame.java
  - ResultSection.java
- - SearchProcessor.java
-
-Belum:
- - FutureForecastProcessor.java
  - ThreeHourForecast.java
  - FutureForecastFrame.java
- 
+ - FutureForecastProcessor.java
+
+Belum:
+ - ForecastWeather.java
