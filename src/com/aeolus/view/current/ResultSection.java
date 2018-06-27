@@ -1,5 +1,6 @@
 package com.aeolus.view.current;
 
+import com.aeolus.app.holder.CurrentWeather;
 import com.aeolus.view.PartPanel;
 import net.miginfocom.swing.MigLayout;
 
@@ -22,76 +23,76 @@ public class ResultSection extends PartPanel {
         getPanel().add(label_result, "span, gapbottom 7");
     }
 
-    public JPanel newWeatherDetail() {
+    public JPanel newWeatherDetail(CurrentWeather info) {
         // variable jadi parameter
         JPanel panel_weather = new JPanel();
         panel_weather.setLayout(new MigLayout("wrap 3"));
         panel_weather.setBackground(Color.LIGHT_GRAY);
 
         /* weather icon */
-        String weather_icon = "01n";
+        String weather_icon = info.getImage();
         JLabel label_weather = new JLabel();
         ImageIcon logo = new ImageIcon(currentDir + resourcePath + weatherResPath + weather_icon + ".png");
         label_weather.setIcon(new ImageIcon(logo.getImage().getScaledInstance(100, 100, Image.SCALE_DEFAULT)));
         panel_weather.add(label_weather, "span 1 4");
 
         /* city & country  label */
-        String city = "Bandung";
-        String country = "ID";
+        String city = info.getCity();
+        String country = info.getCountry();
         JLabel label_city_country = new JLabel();
         label_city_country.setText(city + ", " + country);
         panel_weather.add(label_city_country, "growx, pushx");
 
         /* longitude & latitude */
-        double lon = 103.4;
-        double lat = 28.23;
+        String lon = info.getLongitude();
+        String lat = info.getLatitude();
         JLabel label_lon_lat = new JLabel();
         label_lon_lat.setText(lon + ", " + lat);
         panel_weather.add(label_lon_lat, "align 100%");
 
         /* temperature */
-        double temperature = 35.2;
+        String temperature = info.getTemperature();
         JLabel label_temperature = new JLabel();
         label_temperature.setText("Temperature: " + temperature + " °C");
         panel_weather.add(label_temperature, "pushx, growx");
 
         /* wind speed */
-        double wind_speed = 2.6;
+        String wind_speed = info.getWindSpeed();
         JLabel label_wind_speed = new JLabel();
         label_wind_speed.setText("Wind speed: " + wind_speed + " m/s");
         panel_weather.add(label_wind_speed, "pushx, growx");
 
         /* pressure */
-        double pressure = 1011;
+        String pressure = info.getPressure();
         JLabel label_pressure = new JLabel();
         label_pressure.setText("Atm Pressure: " + pressure + " hPa");
         panel_weather.add(label_pressure, "pushx, growx, gapright 20");
 
         /* wind degrees */
-        double wind_degrees = 10;
+        String wind_degrees = info.getWindDirection();
         JLabel label_wind_degrees = new JLabel();
         label_wind_degrees.setText("Wind direction: " + wind_degrees + "°");
         panel_weather.add(label_wind_degrees, "pushx, growx");
 
         /* humidity */
-        double humidity = 83;
+        String humidity = info.getHumidity();
         JLabel label_humidity = new JLabel();
         label_humidity.setText("Humidity: " + humidity + "%");
         panel_weather.add(label_humidity, "pushx, growx");
 
         /* cloudiness */
-        double cloudiness = 20;
+        String cloudiness = info.getCloudiness();
         JLabel label_cloudiness = new JLabel();
         label_cloudiness.setText("Cloudiness: " + cloudiness + "%");
         panel_weather.add(label_cloudiness, "pushx, growx");
 
         /* weather description */
-        String description = "few clouds";
+        String description = info.getDescription();
         JLabel label_description = new JLabel(description);
         panel_weather.add(label_description, "align 50%");
 
         /* button for 5 days forecast */
-        JButton button_forecast = new JButton("See 5 days of forecast");
+        JButton button_forecast = new JButton("See forecast");
         panel_weather.add(button_forecast, "skip 1, align 100%");
 
         return panel_weather;

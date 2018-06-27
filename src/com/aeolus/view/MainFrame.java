@@ -1,5 +1,6 @@
 package com.aeolus.view;
 
+import com.aeolus.app.SearchProcessor;
 import com.aeolus.view.current.ResultSection;
 import com.aeolus.view.current.SearchBar;
 import net.miginfocom.swing.MigLayout;
@@ -13,6 +14,7 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.io.File;
 import java.io.IOException;
+import java.net.HttpURLConnection;
 
 public class MainFrame {
     private JFrame frame = new JFrame("Aeolus");
@@ -30,7 +32,7 @@ public class MainFrame {
     private String currentDir = System.getProperty("user.dir");
     private String searchDefaultText = "Enter a city name (e.g. Bandung)";
     private String blank = "";
-    private String resultText = "Results for";
+    private String resultText = "Result(s) for";
 
     public MainFrame() {
         frame.setSize(500, 600);
@@ -85,12 +87,20 @@ public class MainFrame {
             JOptionPane.showMessageDialog(frame, "City cannot be blank.\nTry again.");
         } else {
             search_input = textField_search.getText();
-            label_resultText.setText(resultText + " \"" + search_input + "\"");
-            label_resultText.setVisible(true);
 
             resultSection.removeAllResultList();
-            JPanel panel_resultList = resultSection.newWeatherDetail();
-            resultSection.addResultPanel(panel_resultList);
+
+            SearchProcessor sp = new SearchProcessor(search_input);
+            if (sp.getResponseCode() == HttpURLConnection.HTTP_NOT_FOUND) {
+                String msg = "\"" + search_input + "\" not found";
+                JOptionPane.showMessageDialog(frame, msg);
+            } else {
+                JPanel panel_resultList = resultSection.newWeatherDetail(sp.getCurrentWeather());
+
+                resultSection.addResultPanel(panel_resultList);
+            }
+            label_resultText.setText(resultText + " \"" + search_input + "\"");
+            label_resultText.setVisible(true);
             frame.pack();
         }
 
