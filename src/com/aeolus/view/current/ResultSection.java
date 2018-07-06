@@ -1,14 +1,20 @@
 package com.aeolus.view.current;
 
 import com.aeolus.app.holder.CurrentWeather;
+import com.aeolus.view.FutureForecastFrame;
 import com.aeolus.view.PartPanel;
 import net.miginfocom.swing.MigLayout;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 
 public class ResultSection extends PartPanel {
+    private JLabel label_loading = new JLabel();
+
     private String currentDir, resourcePath, weatherResPath;
+    private String loading_image = "load-spinner.gif";
 
     public ResultSection(JLabel label_result, String currentDir, String resourcePath, String weatherResPath) {
         this.currentDir = currentDir;
@@ -21,10 +27,10 @@ public class ResultSection extends PartPanel {
 
         label_result.setVisible(false);
         getPanel().add(label_result, "span, gapbottom 7");
+        getPanel().setVisible(false);
     }
 
-    public JPanel newWeatherDetail(CurrentWeather info) {
-        // variable jadi parameter
+    public void addResultPanel(CurrentWeather info) {
         JPanel panel_weather = new JPanel();
         panel_weather.setLayout(new MigLayout("wrap 3"));
         panel_weather.setBackground(Color.LIGHT_GRAY);
@@ -93,13 +99,32 @@ public class ResultSection extends PartPanel {
 
         /* button for 5 days forecast */
         JButton button_forecast = new JButton("See forecast");
+        button_forecast.addMouseListener(new MouseListener() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+            }
+
+            @Override
+            public void mousePressed(MouseEvent e) {
+//                System.out.println("create new forecast frame");
+                new FutureForecastFrame(info.getCity());
+            }
+
+            @Override
+            public void mouseReleased(MouseEvent e) {
+            }
+
+            @Override
+            public void mouseEntered(MouseEvent e) {
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+            }
+        });
         panel_weather.add(button_forecast, "skip 1, align 100%");
 
-        return panel_weather;
-    }
-
-    public void addResultPanel(JPanel result_panel) {
-        getPanel().add(result_panel, "span, pushx, growx, gapbottom 5");
+        getPanel().add(panel_weather, "span, pushx, growx, gapbottom 5");
     }
 
     public void removeAllResultList() {

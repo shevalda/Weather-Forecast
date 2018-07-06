@@ -89,18 +89,18 @@ public class MainFrame {
             search_input = textField_search.getText();
 
             resultSection.removeAllResultList();
+            resultSection.getPanel().setVisible(true);
+
+            label_resultText.setText(resultText + " \"" + search_input + "\"");
+            label_resultText.setVisible(true);
 
             SearchProcessor sp = new SearchProcessor(search_input);
             if (sp.getResponseCode() == HttpURLConnection.HTTP_NOT_FOUND) {
                 String msg = "\"" + search_input + "\" not found";
                 JOptionPane.showMessageDialog(frame, msg);
             } else {
-                JPanel panel_resultList = resultSection.newWeatherDetail(sp.getCurrentWeather());
-
-                resultSection.addResultPanel(panel_resultList);
+                resultSection.addResultPanel(sp.getCurrentWeather());
             }
-            label_resultText.setText(resultText + " \"" + search_input + "\"");
-            label_resultText.setVisible(true);
             frame.pack();
         }
 

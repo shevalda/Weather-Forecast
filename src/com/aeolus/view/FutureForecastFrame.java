@@ -1,11 +1,11 @@
 package com.aeolus.view;
 
+import com.aeolus.app.FutureForecastProcessor;
 import com.aeolus.view.future.ThreeHourForecast;
 import net.miginfocom.swing.MigLayout;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
-import javax.swing.plaf.FontUIResource;
 import java.io.File;
 import java.io.IOException;
 
@@ -16,11 +16,13 @@ public class FutureForecastFrame {
     private JLabel label_city_country;
 
     private ThreeHourForecast threeHourForecast;
+    private FutureForecastProcessor futureForecastProcessor;
 
     private String resourcePath = "\\res\\";
     private String currentDir = System.getProperty("user.dir");
 
-    public FutureForecastFrame() {
+    public FutureForecastFrame(String city_name) {
+//        System.out.println("future forecast frame");
         frame.setSize(500, 400);
         frame.setLocationRelativeTo(null);
         frame.setResizable(false);
@@ -34,22 +36,24 @@ public class FutureForecastFrame {
 
         panel_main.setLayout(new MigLayout());
 
+//        System.out.println("creating FutureForecastProcessor");
+        futureForecastProcessor = new FutureForecastProcessor(city_name);
+
         /* city & country name */
-        String city = "Bandung";
-        String country = "ID";
+        String city = futureForecastProcessor.getForecastWeather().getCity();
+        String country = futureForecastProcessor.getForecastWeather().getCountry();
         label_city_country = new JLabel();
         label_city_country.setText(city + ", " + country);
         panel_main.add(label_city_country, "span");
 
         /* three hour forecast tiles */
-        threeHourForecast = new ThreeHourForecast(resourcePath, currentDir);
+        threeHourForecast = new ThreeHourForecast(resourcePath, currentDir, futureForecastProcessor.getForecastWeather());
         panel_threeHourForecast = new JScrollPane(threeHourForecast.getPanel(), JScrollPane.VERTICAL_SCROLLBAR_NEVER, JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
         panel_threeHourForecast.setBorder(null);
         panel_main.add(panel_threeHourForecast);
 
         /*** frame final setup ***/
         frame.add(panel_main);
-//        frame.pack();
         frame.setVisible(true);
     }
 

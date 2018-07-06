@@ -1,8 +1,50 @@
 package com.aeolus.app.holder;
 
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+
 public class CurrentWeather {
 
     private String city, country, description, image, latitude, longitude, temperature, pressure, windSpeed, windDirection, humidity, cloudiness;
+
+    public CurrentWeather(JSONObject jsonObject) {
+        // longitude & latitude
+        JSONObject coordinate = (JSONObject) jsonObject.get("coord");
+        longitude = coordinate.get("lon").toString();
+        latitude = coordinate.get("lat").toString();
+
+        // description & icon name
+        JSONArray weather = (JSONArray) jsonObject.get("weather");
+        JSONObject weather_obj = (JSONObject) weather.get(0);
+        description = (String) weather_obj.get("description");
+        image = (String) weather_obj.get("icon");
+
+        // city
+        city = (String) jsonObject.get("name");
+
+        // temperature, atmosphere pressure, humidity
+        JSONObject main = (JSONObject) jsonObject.get("main");
+        temperature = main.get("temp").toString();
+        humidity = main.get("humidity").toString();
+        pressure = main.get("pressure").toString();
+
+        // cloudiness
+        JSONObject clouds = (JSONObject) jsonObject.get("clouds");
+        cloudiness = clouds.get("all").toString();
+
+        // country
+        JSONObject sys = (JSONObject) jsonObject.get("sys");
+        country = (String) sys.get("country");
+
+        // wind speed & direction
+        JSONObject wind = (JSONObject) jsonObject.get("wind");
+        if (wind.get("deg") != null) {
+            windDirection = wind.get("deg").toString();
+        } else {
+            windDirection = "-";
+        }
+        windSpeed = wind.get("speed").toString();
+    }
 
     public void printAll() {
         System.out.println("city : " + city);
@@ -23,95 +65,48 @@ public class CurrentWeather {
         return city;
     }
 
-    public void setCity(String city) {
-        this.city = city;
-    }
-
     public String getCountry() {
         return country;
-    }
-
-    public void setCountry(String country) {
-        this.country = country;
     }
 
     public String getDescription() {
         return description;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
     public String getImage() {
         return image;
-    }
-
-    public void setImage(String image) {
-        this.image = image;
     }
 
     public String getLatitude() {
         return latitude;
     }
 
-    public void setLatitude(String latitude) {
-        this.latitude = latitude;
-    }
-
     public String getLongitude() {
         return longitude;
-    }
-
-    public void setLongitude(String longitude) {
-        this.longitude = longitude;
     }
 
     public String getTemperature() {
         return temperature;
     }
 
-    public void setTemperature(String temperature) {
-        this.temperature = temperature;
-    }
-
     public String getPressure() {
         return pressure;
-    }
-
-    public void setPressure(String pressure) {
-        this.pressure = pressure;
     }
 
     public String getWindSpeed() {
         return windSpeed;
     }
 
-    public void setWindSpeed(String windSpeed) {
-        this.windSpeed = windSpeed;
-    }
-
     public String getWindDirection() {
         return windDirection;
-    }
-
-    public void setWindDirection(String windDirection) {
-        this.windDirection = windDirection;
     }
 
     public String getHumidity() {
         return humidity;
     }
 
-    public void setHumidity(String humidity) {
-        this.humidity = humidity;
-    }
-
     public String getCloudiness() {
         return cloudiness;
     }
 
-    public void setCloudiness(String cloudiness) {
-        this.cloudiness = cloudiness;
-    }
 }

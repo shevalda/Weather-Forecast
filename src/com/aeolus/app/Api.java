@@ -6,6 +6,7 @@ public class Api {
     public Api() {
         // INSERT YOUR OPENWEATHERMAP HERE
         // e.g. key = "qwertyuiop123456789";
+        
     }
 
     public String generateWeatherURL(String city) {
