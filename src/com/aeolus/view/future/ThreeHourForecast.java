@@ -22,7 +22,7 @@ public class ThreeHourForecast extends PartPanel {
 
     private void addWeatherTile(ThreeHourBase thb) {
         JPanel panel_tile = new JPanel();
-        panel_tile.setLayout(new MigLayout());
+        panel_tile.setLayout(new MigLayout("wrap 2"));
 
         /* weather icon */
         String weather_icon = thb.getImage();
@@ -38,54 +38,39 @@ public class ThreeHourForecast extends PartPanel {
         panel_tile.add(label_description, "span, align 50%, gapbottom 10");
 
         /* temperature */
-        String temperature = thb.getTemperature();
-        JLabel label_temperature = new JLabel();
-        label_temperature.setText("Temperature: " + temperature + " °C");
-        inFont.setMainFont(label_temperature);
-        panel_tile.add(label_temperature, "span");
+        addLabel(panel_tile, "Temperature");
+        String temperature = thb.getTemperature() + " °C";
+        addInformation(panel_tile, temperature);
 
         /* pressure */
-        String pressure = thb.getPressure();
-        JLabel label_pressure = new JLabel();
-        label_pressure.setText("Atm pressure: " + pressure + "hPa");
-        inFont.setMainFont(label_pressure);
-        panel_tile.add(label_pressure, "span");
+        addLabel(panel_tile, "Atm pressure");
+        String pressure = thb.getPressure() + " hPa";
+        addInformation(panel_tile, pressure);
 
         /* humidity */
-        String humidity = thb.getHumidity();
-        JLabel label_humidity = new JLabel();
-        label_humidity.setText("Humidity: " + humidity + "%");
-        inFont.setMainFont(label_humidity);
-        panel_tile.add(label_humidity, "span");
+        addLabel(panel_tile, "Humidity");
+        String humidity = thb.getHumidity() + "%";
+        addInformation(panel_tile, humidity);
 
         /* cloudiness */
-        String cloudiness = thb.getCloudiness();
-        JLabel label_cloudiness = new JLabel();
-        label_cloudiness.setText("Cloudiness: " + cloudiness + "%");
-        inFont.setMainFont(label_cloudiness);
-        panel_tile.add(label_cloudiness, "span");
+        addLabel(panel_tile, "Cloudiness");
+        String cloudiness = thb.getCloudiness() + "%";
+        addInformation(panel_tile, cloudiness);
 
         /* wind speed */
-        String wind_speed = thb.getWindSpeed();
-        JLabel label_wind_speed = new JLabel();
-        label_wind_speed.setText("Wind speed: " + wind_speed + " m/s");
-        inFont.setMainFont(label_wind_speed);
-        panel_tile.add(label_wind_speed, "span");
+        addLabel(panel_tile, "Wind speed");
+        String wind_speed = thb.getWindSpeed() + "m/s";
+        addInformation(panel_tile, wind_speed);
 
         /* wind degrees */
-        String wind_degrees = thb.getWindDirection();
-        JLabel label_wind_degrees = new JLabel();
-        label_wind_degrees.setText("Wind direction: " + wind_degrees + "°");
-        inFont.setMainFont(label_wind_degrees);
-        panel_tile.add(label_wind_degrees, "span");
+        addLabel(panel_tile, "Wind degrees");
+        String wind_degrees = thb.getWindDirection() + "°";
+        addInformation(panel_tile, wind_degrees);
 
         /* rain volume */
+        addLabel(panel_tile, "Rain volume");
         String rain_volume = thb.getRainVolume();
-        JLabel label_rain_volume = new JLabel();
-        label_rain_volume.setText("Rain volume : " + rain_volume);
-        inFont.setMainFont(label_rain_volume);
-        panel_tile.add(label_rain_volume, "span");
-
+        addInformation(panel_tile, rain_volume);
 
         /* time (date) */
         String date = thb.getDate();
@@ -102,15 +87,27 @@ public class ThreeHourForecast extends PartPanel {
         panel_tile.add(label_clock, "align 50%, span, gapbottom 5");
 
         if (thb.getDayNight().equals("d")) {
-            panel_tile.setBackground(Color.LIGHT_GRAY);
+            panel_tile.setBackground(new Color(236, 209, 128));
         } else {
-            panel_tile.setBackground(Color.DARK_GRAY);
+            panel_tile.setBackground(new Color(3, 30, 60));
             for (Component c : panel_tile.getComponents()) {
                 c.setForeground(Color.WHITE);
             }
         }
 
-        getPanel().add(panel_tile, "pushy, growy, gap 10");
+        getPanel().add(panel_tile, "pushy, growy, gap 5");
+    }
+
+    private void addLabel(JPanel panel, String desc) {
+        JLabel label = new JLabel(desc);
+        inFont.setMainFont(label);
+        panel.add(label, "pushx, growx, gapleft 5");
+    }
+
+    private void addInformation(JPanel panel, String info) {
+        JLabel label = new JLabel(info);
+        inFont.setMainFont(label, Font.BOLD, 13);
+        panel.add(label, "align 100%, gapleft 10, gapright 5");
     }
 
 }

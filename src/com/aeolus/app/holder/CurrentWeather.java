@@ -46,20 +46,20 @@ public class CurrentWeather {
         windSpeed = wind.get("speed").toString();
     }
 
-    public void printAll() {
-        System.out.println("city : " + city);
-        System.out.println("country : " + country);
-        System.out.println("description : " + description);
-        System.out.println("image : " + image);
-        System.out.println("latitude : " + latitude);
-        System.out.println("longitude : " + longitude);
-        System.out.println("temperature : " + temperature);
-        System.out.println("pressure : " + pressure);
-        System.out.println("humidity : " + humidity);
-        System.out.println("wind speed : " + windSpeed);
-        System.out.println("wind direction : " + windDirection);
-        System.out.println("cloudiness : " + cloudiness);
-    }
+//    public void printAll() {
+//        System.out.println("city : " + city);
+//        System.out.println("country : " + country);
+//        System.out.println("description : " + description);
+//        System.out.println("image : " + image);
+//        System.out.println("latitude : " + latitude);
+//        System.out.println("longitude : " + longitude);
+//        System.out.println("temperature : " + temperature);
+//        System.out.println("pressure : " + pressure);
+//        System.out.println("humidity : " + humidity);
+//        System.out.println("wind speed : " + windSpeed);
+//        System.out.println("wind direction : " + windDirection);
+//        System.out.println("cloudiness : " + cloudiness);
+//    }
 
     public String getCity() {
         return city;

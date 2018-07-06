@@ -26,8 +26,8 @@ public class FutureForecastFrame {
         frame.setSize(500, 400);
         frame.setLocationRelativeTo(null);
         frame.setResizable(false);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setTitle("Aeolus - Three Hour Forecast");
+        frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+//        frame.setTitle("Aeolus - Three Hour Forecast");
         try {
             frame.setIconImage(ImageIO.read(new File(InPath.getResourceDirectory("favicon.png"))));
         } catch (IOException e) {
@@ -42,6 +42,7 @@ public class FutureForecastFrame {
         /* city & country name */
         String city = futureForecastProcessor.getForecastWeather().getCity();
         String country = futureForecastProcessor.getForecastWeather().getCountry();
+        frame.setTitle("Aeolus - " + city + ", " + country + " Forecast");
         label_city_country = new JLabel();
         label_city_country.setText(city + ", " + country);
         inFont.setBaseFont(label_city_country, Font.BOLD, 20);

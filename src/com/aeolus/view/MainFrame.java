@@ -30,15 +30,15 @@ public class MainFrame {
     private SearchBar searchBar;
     private InFont inFont = new InFont();
 
-    private String searchDefaultText = "Enter a city name (e.g. Bandung)";
+    private String searchDefaultText = "Try \"Bandung\" or \"Jakarta, ID\"";
     private String blank = "";
     private String resultText = "Result(s) for";
 
     public MainFrame() {
-        frame.setSize(500, 600);
+        frame.setSize(600, 600);
         frame.setLocationRelativeTo(null);
-//        frame.setResizable(false);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setResizable(false);
+        frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         try {
             frame.setIconImage(ImageIO.read(new File(InPath.getResourceDirectory("favicon.png"))));
         } catch (IOException e) {
@@ -50,7 +50,7 @@ public class MainFrame {
         panel_main.addMouseListener(new ListenForMouse());
 
         /*** search bar ***/
-        textField_search = new JTextField(searchDefaultText, 40);
+        textField_search = new JTextField(searchDefaultText, 42);
         textField_search.addMouseListener(new ListenForMouse());
         textField_search.addKeyListener(new ListenForKeys());
         button_search = new JButton();
@@ -58,13 +58,13 @@ public class MainFrame {
 
         searchBar = new SearchBar(textField_search, button_search);
         panel_searchbar = searchBar.getPanel();
-        panel_main.add(panel_searchbar, "span, growx, pushx");
+        panel_main.add(panel_searchbar, "span, growx, pushx, gapleft 10, gapright 10");
 
         /*** result section ***/
         label_resultText = new JLabel();
         resultSection = new ResultSection(label_resultText);
         panel_result = resultSection.getPanel();
-        panel_main.add(panel_result, "span, growx, pushx");
+        panel_main.add(panel_result, "span, growx, pushx, , gapleft 10, gapright 10");
 
         /*** credit ***/
         JLabel label_credit = new JLabel("created by Shevalda Gracielira");
@@ -90,20 +90,24 @@ public class MainFrame {
     private void checkSearchText() {
         if (textField_search.getText().equals(searchDefaultText) || textField_search.getText().equals(blank)) {
             JOptionPane.showMessageDialog(frame, "City cannot be blank.\nTry again.");
+            label_resultText.setVisible(false);
         } else {
             search_input = textField_search.getText();
 
             resultSection.removeAllResultList();
             resultSection.getPanel().setVisible(true);
 
-            label_resultText.setText(resultText + " \"" + search_input + "\"");
-            label_resultText.setVisible(true);
-
             SearchProcessor sp = new SearchProcessor(search_input);
             if (sp.getResponseCode() == HttpURLConnection.HTTP_NOT_FOUND) {
                 String msg = "\"" + search_input + "\" not found";
                 JOptionPane.showMessageDialog(frame, msg);
+                label_resultText.setVisible(false);
+            } else if (sp.getResponseCode() == HttpURLConnection.HTTP_UNAUTHORIZED){
+                JOptionPane.showMessageDialog(frame, "OpenWeatherMap API key invalid\nCheck again the key");
+                label_resultText.setVisible(false);
             } else {
+                label_resultText.setText(resultText + " \"" + search_input + "\"");
+                label_resultText.setVisible(true);
                 resultSection.addResultPanel(sp.getCurrentWeather());
             }
             frame.pack();

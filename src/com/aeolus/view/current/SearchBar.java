@@ -18,13 +18,15 @@ public class SearchBar extends PartPanel {
         getPanel().setLayout(new MigLayout("insets 5 0 5 0"));   // top left bottom right
 
         /* logo */
-        String logoImageName = "app-logo.png";
+//        String logoImageName = "app-logo.png";
+        String logoImageName = "logo.png";
 
         label_logo = new JLabel();
         ImageIcon logo = new ImageIcon(InPath.getResourceDirectory(logoImageName));
-        label_logo.setIcon(new ImageIcon(logo.getImage().getScaledInstance(50, 25, Image.SCALE_DEFAULT)));
+        label_logo.setIcon(new ImageIcon(logo.getImage().getScaledInstance(250, 125, Image.SCALE_DEFAULT)));
         label_logo.setAlignmentX(Component.CENTER_ALIGNMENT);
-        getPanel().add(label_logo);
+//        label_logo.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+        getPanel().add(label_logo, "span, align 50%");
 
         /* search bar */
         textField_search.setForeground(Color.GRAY);
@@ -37,6 +39,9 @@ public class SearchBar extends PartPanel {
         try {
             BufferedImage searchicon = ImageIO.read(new File(InPath.getResourceDirectory(searchImageName)));
             button_search.setIcon(new ImageIcon(searchicon));
+            button_search.setMargin(new Insets(5,12,5,12));
+            button_search.setBackground(new Color(29, 116, 117));
+            button_search.setBorderPainted(false);
             getPanel().add(button_search);
         } catch (IOException e) {
             System.out.println("failed to find " + searchImageName);
