@@ -1,4 +1,4 @@
-package com.aeolus.app;
+package com.aeolus.utils;
 
 public class Api {
     private String key;

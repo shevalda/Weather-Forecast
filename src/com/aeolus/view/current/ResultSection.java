@@ -1,6 +1,7 @@
 package com.aeolus.view.current;
 
 import com.aeolus.app.holder.CurrentWeather;
+import com.aeolus.utils.InPath;
 import com.aeolus.view.FutureForecastFrame;
 import com.aeolus.view.PartPanel;
 import net.miginfocom.swing.MigLayout;
@@ -11,16 +12,10 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
 public class ResultSection extends PartPanel {
-    private JLabel label_loading = new JLabel();
 
-    private String currentDir, resourcePath, weatherResPath;
-    private String loading_image = "load-spinner.gif";
-
-    public ResultSection(JLabel label_result, String currentDir, String resourcePath, String weatherResPath) {
-        this.currentDir = currentDir;
-        this.resourcePath = resourcePath;
-        this.weatherResPath = weatherResPath;
+    public ResultSection(JLabel label_result) {
         label_result.setForeground(Color.WHITE);
+        inFont.setBaseFont(label_result, Font.BOLD, 12);
 
         getPanel().setLayout(new MigLayout());
         getPanel().setBackground(Color.DARK_GRAY);
@@ -38,15 +33,16 @@ public class ResultSection extends PartPanel {
         /* weather icon */
         String weather_icon = info.getImage();
         JLabel label_weather = new JLabel();
-        ImageIcon logo = new ImageIcon(currentDir + resourcePath + weatherResPath + weather_icon + ".png");
-        label_weather.setIcon(new ImageIcon(logo.getImage().getScaledInstance(100, 100, Image.SCALE_DEFAULT)));
-        panel_weather.add(label_weather, "span 1 4");
+        ImageIcon logo = new ImageIcon(InPath.getWeatherStateDirectory(weather_icon));
+        label_weather.setIcon(new ImageIcon(logo.getImage().getScaledInstance(80, 80, Image.SCALE_DEFAULT)));
+        panel_weather.add(label_weather, "span 1 4, align 50%, gapright 10");
 
         /* city & country  label */
         String city = info.getCity();
         String country = info.getCountry();
         JLabel label_city_country = new JLabel();
         label_city_country.setText(city + ", " + country);
+        inFont.setMainFont(label_city_country, Font.BOLD, 20);
         panel_weather.add(label_city_country, "growx, pushx");
 
         /* longitude & latitude */
@@ -54,51 +50,60 @@ public class ResultSection extends PartPanel {
         String lat = info.getLatitude();
         JLabel label_lon_lat = new JLabel();
         label_lon_lat.setText(lon + ", " + lat);
+        inFont.setMainFont(label_lon_lat, Font.ITALIC, 14);
         panel_weather.add(label_lon_lat, "align 100%");
 
         /* temperature */
         String temperature = info.getTemperature();
         JLabel label_temperature = new JLabel();
         label_temperature.setText("Temperature: " + temperature + " °C");
+        inFont.setMainFont(label_temperature);
         panel_weather.add(label_temperature, "pushx, growx");
 
         /* wind speed */
         String wind_speed = info.getWindSpeed();
         JLabel label_wind_speed = new JLabel();
         label_wind_speed.setText("Wind speed: " + wind_speed + " m/s");
+        inFont.setMainFont(label_wind_speed);
         panel_weather.add(label_wind_speed, "pushx, growx");
 
         /* pressure */
         String pressure = info.getPressure();
         JLabel label_pressure = new JLabel();
         label_pressure.setText("Atm Pressure: " + pressure + " hPa");
+        inFont.setMainFont(label_pressure);
         panel_weather.add(label_pressure, "pushx, growx, gapright 20");
 
         /* wind degrees */
         String wind_degrees = info.getWindDirection();
         JLabel label_wind_degrees = new JLabel();
         label_wind_degrees.setText("Wind direction: " + wind_degrees + "°");
+        inFont.setMainFont(label_wind_degrees);
         panel_weather.add(label_wind_degrees, "pushx, growx");
 
         /* humidity */
         String humidity = info.getHumidity();
         JLabel label_humidity = new JLabel();
         label_humidity.setText("Humidity: " + humidity + "%");
+        inFont.setMainFont(label_humidity);
         panel_weather.add(label_humidity, "pushx, growx");
 
         /* cloudiness */
         String cloudiness = info.getCloudiness();
         JLabel label_cloudiness = new JLabel();
         label_cloudiness.setText("Cloudiness: " + cloudiness + "%");
+        inFont.setMainFont(label_cloudiness);
         panel_weather.add(label_cloudiness, "pushx, growx");
 
         /* weather description */
         String description = info.getDescription();
         JLabel label_description = new JLabel(description);
-        panel_weather.add(label_description, "align 50%");
+        inFont.setMainFont(label_description, Font.BOLD, 15);
+        panel_weather.add(label_description, "align 50%, gapright 10");
 
         /* button for 5 days forecast */
         JButton button_forecast = new JButton("See forecast");
+        inFont.setBaseFont(button_forecast, Font.BOLD, 12);
         button_forecast.addMouseListener(new MouseListener() {
             @Override
             public void mouseClicked(MouseEvent e) {

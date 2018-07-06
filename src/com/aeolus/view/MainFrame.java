@@ -1,6 +1,8 @@
 package com.aeolus.view;
 
 import com.aeolus.app.SearchProcessor;
+import com.aeolus.utils.InFont;
+import com.aeolus.utils.InPath;
 import com.aeolus.view.current.ResultSection;
 import com.aeolus.view.current.SearchBar;
 import net.miginfocom.swing.MigLayout;
@@ -26,10 +28,8 @@ public class MainFrame {
 
     private ResultSection resultSection;
     private SearchBar searchBar;
+    private InFont inFont = new InFont();
 
-    private String resourcePath = "\\res\\";
-    private String weatherResPath = "\\state\\";
-    private String currentDir = System.getProperty("user.dir");
     private String searchDefaultText = "Enter a city name (e.g. Bandung)";
     private String blank = "";
     private String resultText = "Result(s) for";
@@ -40,7 +40,7 @@ public class MainFrame {
 //        frame.setResizable(false);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         try {
-            frame.setIconImage(ImageIO.read(new File(currentDir + resourcePath + "favicon.png")));
+            frame.setIconImage(ImageIO.read(new File(InPath.getResourceDirectory("favicon.png"))));
         } catch (IOException e) {
             System.out.println("failed to get favicon");
         }
@@ -56,15 +56,20 @@ public class MainFrame {
         button_search = new JButton();
         button_search.addMouseListener(new ListenForMouse());
 
-        searchBar = new SearchBar(textField_search, button_search, currentDir, resourcePath);
+        searchBar = new SearchBar(textField_search, button_search);
         panel_searchbar = searchBar.getPanel();
         panel_main.add(panel_searchbar, "span, growx, pushx");
 
         /*** result section ***/
         label_resultText = new JLabel();
-        resultSection = new ResultSection(label_resultText, currentDir, resourcePath, weatherResPath);
+        resultSection = new ResultSection(label_resultText);
         panel_result = resultSection.getPanel();
         panel_main.add(panel_result, "span, growx, pushx");
+
+        /*** credit ***/
+        JLabel label_credit = new JLabel("created by Shevalda Gracielira");
+        inFont.setBaseFont(label_credit, 12);
+        panel_main.add(label_credit, "span, align 97%, gaptop 10, gapbottom 5");
 
         /*** frame final setup ***/
         frame.add(panel_main);

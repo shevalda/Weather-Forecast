@@ -42,10 +42,14 @@ public class ThreeHourBase {
 //        System.out.println("wind direction");
 
         // rain volume
-        JSONObject rain = (JSONObject) jsonObject.get("rain");
-        if (rain.get("3h") != null) {
-            rainVolume = rain.get("3h").toString();
-        } else  {
+        if (jsonObject.get("rain") != null) {
+            JSONObject rain = (JSONObject) jsonObject.get("rain");
+            if (rain.get("3h") != null) {
+                rainVolume = rain.get("3h").toString();
+            } else  {
+                rainVolume = "-";
+            }
+        } else {
             rainVolume = "-";
         }
 //        System.out.println("rain volume");

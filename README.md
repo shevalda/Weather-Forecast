@@ -37,6 +37,7 @@ src
 			view
 			    current
 			    future
+			utils
 ```
 
 **lib** - libraries used by the application
@@ -51,7 +52,9 @@ src
 
 **src/com/aeolus/view/current** - java swing panels for the main frame (MainFrame.java)
 
-**src/com/aeolus/view/future** - java swing panels for the "future forecast" frame (FutureForecast.java) 
+**src/com/aeolus/view/future** - java swing panels for the "future forecast" frame (FutureForecast.java)
+
+**src/com/aeolus/utils** - classes that hold utility tools for app and view package  
 
 This package structure is used to categorize based on the files functionalities.
 
@@ -64,13 +67,15 @@ Sudah:
  - CurrentWeather.java
  - SearchProcessor.java
  - Api.java
+ - ThreeHourForecast.java
+ - FutureForecastProcessor.java
+ - ForecastWeather.java
+ - InFont.java
+ - InPath.java
 
 Sedang:
  - MainFrame.java
  - ResultSection.java
- - ThreeHourForecast.java
  - FutureForecastFrame.java
- - FutureForecastProcessor.java
-
+ 
 Belum:
- - ForecastWeather.java
