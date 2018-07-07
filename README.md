@@ -16,6 +16,8 @@ This program uses the [OpenWeatherMap API](https://openweathermap.org/api) for i
 
 This API provides the current weather data of the selected city by the user. Cities can be selected by its name (and county), city id (the list of city and their id is provided [here](http://bulk.openweathermap.org/sample/)), geographic coordinates, and zip codes. The information given by the API are overall, temperature, wind, atmospheric pressure, humidity and other weather-related condition of the selected city.
 
+This application uses the "Search accuracy" where the API find the closest city that matches a city name given in the request. However, the result might not so accurate and might return a response that is undesirable.
+
 ### 5 day / 3 hour forecast
 
 This API gives us a slightly lesser information compared to Current weather data. However this API provides information for 3-hour-interval forecast for the next five days of the selected city.
@@ -72,10 +74,21 @@ Sudah:
  - ForecastWeather.java
  - InFont.java
  - InPath.java
-
-Sedang:
  - MainFrame.java
  - ResultSection.java
  - FutureForecastFrame.java
+ - CurrentWeatherFrame.java
+
+Sedang:
  
 Belum:
+
+## How to run
+
+ 1. Download or clone the respitory to a local respitory.
+ 2. Make sure you are connected to the internet. The program will not work without an internet connection and does not give a warning if you are disconnedted.
+ 3. Run **Weather-Forecast.jar**. Make sure the .jar file is not moved from the original folder.
+ 
+ ## How to use
+ 
+ *coming soon* 

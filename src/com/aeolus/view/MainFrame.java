@@ -30,15 +30,14 @@ public class MainFrame {
     private SearchBar searchBar;
     private InFont inFont = new InFont();
 
-    private String searchDefaultText = "Try \"Bandung\" or \"Jakarta, ID\"";
+    private String searchDefaultText = "Try \"Bandung\" or \"Jakarta\"";
     private String blank = "";
-    private String resultText = "Result(s) for";
 
     public MainFrame() {
         frame.setSize(600, 600);
         frame.setLocationRelativeTo(null);
         frame.setResizable(false);
-        frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         try {
             frame.setIconImage(ImageIO.read(new File(InPath.getResourceDirectory("favicon.png"))));
         } catch (IOException e) {
@@ -69,7 +68,7 @@ public class MainFrame {
         /*** credit ***/
         JLabel label_credit = new JLabel("created by Shevalda Gracielira");
         inFont.setBaseFont(label_credit, 12);
-        panel_main.add(label_credit, "span, align 97%, gaptop 10, gapbottom 5");
+        panel_main.add(label_credit, "span, align 97%, gaptop 6, gapbottom 5");
 
         /*** frame final setup ***/
         frame.add(panel_main);
@@ -98,17 +97,20 @@ public class MainFrame {
             resultSection.getPanel().setVisible(true);
 
             SearchProcessor sp = new SearchProcessor(search_input);
-            if (sp.getResponseCode() == HttpURLConnection.HTTP_NOT_FOUND) {
-                String msg = "\"" + search_input + "\" not found";
-                JOptionPane.showMessageDialog(frame, msg);
-                label_resultText.setVisible(false);
-            } else if (sp.getResponseCode() == HttpURLConnection.HTTP_UNAUTHORIZED){
+            if (sp.getResponseCode() == HttpURLConnection.HTTP_UNAUTHORIZED){
                 JOptionPane.showMessageDialog(frame, "OpenWeatherMap API key invalid\nCheck again the key");
                 label_resultText.setVisible(false);
-            } else {
-                label_resultText.setText(resultText + " \"" + search_input + "\"");
+            } else if (sp.getCurrentWeather().getBaseCount() == 0) {
+                label_resultText.setText("No result for " + " \"" + search_input + "\"");
                 label_resultText.setVisible(true);
-                resultSection.addResultPanel(sp.getCurrentWeather());
+            } else {
+                if (sp.getCurrentWeather().getBaseCount() == 1) {
+                    label_resultText.setText("1 result for \"" + search_input + "\"");
+                } else {
+                    label_resultText.setText(sp.getCurrentWeather().getBaseCount() + " results for \"" + search_input + "\"");
+                }
+                label_resultText.setVisible(true);
+                resultSection.showResults(sp.getCurrentWeather());
             }
             frame.pack();
         }

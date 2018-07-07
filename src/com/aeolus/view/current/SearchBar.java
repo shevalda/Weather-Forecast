@@ -18,14 +18,12 @@ public class SearchBar extends PartPanel {
         getPanel().setLayout(new MigLayout("insets 5 0 5 0"));   // top left bottom right
 
         /* logo */
-//        String logoImageName = "app-logo.png";
         String logoImageName = "logo.png";
 
         label_logo = new JLabel();
         ImageIcon logo = new ImageIcon(InPath.getResourceDirectory(logoImageName));
         label_logo.setIcon(new ImageIcon(logo.getImage().getScaledInstance(250, 125, Image.SCALE_DEFAULT)));
         label_logo.setAlignmentX(Component.CENTER_ALIGNMENT);
-//        label_logo.setBorder(BorderFactory.createLineBorder(Color.BLACK));
         getPanel().add(label_logo, "span, align 50%");
 
         /* search bar */

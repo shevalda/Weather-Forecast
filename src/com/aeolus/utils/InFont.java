@@ -8,7 +8,6 @@ import java.io.IOException;
 public class InFont {
 
     private String font_name_base = "FZYaoTi";
-//    private String font_name_main = "Gill Sans MT Condensed";
     private String font_name_main = "Gill Sans MT";
 
     public InFont() {

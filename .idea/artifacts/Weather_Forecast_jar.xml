@@ -1,0 +1,13 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="Weather-Forecast:jar">
+    <output-path>$PROJECT_DIR$</output-path>
+    <root id="archive" name="Weather-Forecast.jar">
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/META-INF/MANIFEST.MF" />
+      </element>
+      <element id="module-output" name="Weather-Forecast" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../MiG Layout/miglayout-4.0-swing.jar" path-in-jar="/" />
+      <element id="library" level="project" name="json-simple-1.1" />
+    </root>
+  </artifact>
+</component>

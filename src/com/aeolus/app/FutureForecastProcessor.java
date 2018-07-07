@@ -11,9 +11,7 @@ public class FutureForecastProcessor extends Processor {
     private ForecastWeather forecastWeather;
 
     public FutureForecastProcessor(String city_name) {
-//        System.out.println("FutureForecastProcessor created");
         createConnection(getApi().generateForecastURL(city_name));
-//        System.out.println("connection created");
         if (getResponseCode() == HttpURLConnection.HTTP_OK) {
             readJSONResponse();
         }
@@ -25,7 +23,6 @@ public class FutureForecastProcessor extends Processor {
 
     @Override
     protected void readJSONResponse() {
-//        System.out.println("parsing JSON");
         JSONParser parser = new JSONParser();
         try {
             Object obj = parser.parse(getResponse());

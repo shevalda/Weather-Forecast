@@ -2,7 +2,6 @@ package com.aeolus.view.future;
 
 import com.aeolus.app.holder.ForecastWeather;
 import com.aeolus.app.holder.ThreeHourBase;
-import com.aeolus.utils.InFont;
 import com.aeolus.utils.InPath;
 import com.aeolus.view.PartPanel;
 import net.miginfocom.swing.MigLayout;
