@@ -36,10 +36,10 @@ src
 		aeolus
 			app
 			    holder
+			utils
 			view
 			    current
 			    future
-			utils
 ```
 
 **lib** - libraries used by the application
@@ -50,13 +50,13 @@ src
 
 **src/com/aeolus/app/holder** - java classes to store OpenWeatherMap API result
 
+**src/com/aeolus/utils** - classes that hold utility tools for app and view package  
+
 **src/com/aeolus/view** - java swing frames and interface for the application
 
 **src/com/aeolus/view/current** - java swing panels for the main frame (MainFrame.java)
 
 **src/com/aeolus/view/future** - java swing panels for the "future forecast" frame (FutureForecast.java)
-
-**src/com/aeolus/utils** - classes that hold utility tools for app and view package  
 
 This package structure is used to categorize based on the files functionalities.
 
@@ -91,22 +91,29 @@ Belum:
  
  ## How to use
 **1.** After opening the application, you will see this main menu.
-    ![]()
+
+![](https://github.com/shevalda/Weather-Forecast/blob/master/doc/screenshots/1a.JPG)
 
 Type the city name you want to search. The search is not case sensitive. After you input the city, press ENTER or click the search button.
-    ![]()
+
+![](https://github.com/shevalda/Weather-Forecast/blob/master/doc/screenshots/1b.JPG)
     
 If you search a blank text, the application will give you a reminder.
-    ![]()
+
+![](https://github.com/shevalda/Weather-Forecast/blob/master/doc/screenshots/1c.JPG)
   
 **2.** Wait for a few seconds for the result to show. The result might show a couple of similar names. To know which city you are interested, look at the longitude and latitude of each city.
-    ![] ()
+
+![](https://github.com/shevalda/Weather-Forecast/blob/master/doc/screenshots/2a.JPG)
     
 The search might not return any cities. You might want to review whether you have input the city's name right.
-    ![]() 
+
+![](https://github.com/shevalda/Weather-Forecast/blob/master/doc/screenshots/2b.JPG) 
     
 **3.** To see the detailed weather information, click on one of the results. It will show another window containing the information.
-    ![]()
+
+![](https://github.com/shevalda/Weather-Forecast/blob/master/doc/screenshots/3.JPG)
 
 **4.** To see the three-hour forecast, click on **See forecast** button. Another window will show weather informations for the next five days.
-    ![]() 
+
+![](https://github.com/shevalda/Weather-Forecast/blob/master/doc/screenshots/4.JPG) 
