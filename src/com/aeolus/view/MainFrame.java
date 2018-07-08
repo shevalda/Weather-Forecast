@@ -5,11 +5,8 @@ import com.aeolus.utils.InFont;
 import com.aeolus.utils.InPath;
 import com.aeolus.view.current.ResultSection;
 import com.aeolus.view.current.SearchBar;
-import net.miginfocom.swing.MigLayout;
 
-import javax.imageio.ImageIO;
-import javax.swing.*;
-import java.awt.*;
+import java.awt.Color;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.event.MouseEvent;
@@ -17,155 +14,171 @@ import java.awt.event.MouseListener;
 import java.io.File;
 import java.io.IOException;
 import java.net.HttpURLConnection;
+import javax.imageio.ImageIO;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+
+import net.miginfocom.swing.MigLayout;
 
 public class MainFrame {
-    private JFrame frame = new JFrame("Aeolus");
-    private JPanel panel_main, panel_searchbar, panel_result;
-    private JTextField textField_search;
-    private JButton button_search;
-    private JLabel label_resultText;
-    private String search_input = "";
+  private JFrame frame = new JFrame("Aeolus");
+  private JPanel panelMain;
+  private JPanel panelSearchBar;
+  private JPanel panelResult;
+  private JTextField textFieldSearch;
+  private JButton buttonSearch;
+  private JLabel labelResultText;
+  private String searchInput = "";
 
-    private ResultSection resultSection;
-    private SearchBar searchBar;
-    private InFont inFont = new InFont();
+  private ResultSection resultSection;
+  private SearchBar searchBar;
+  private InFont inFont = new InFont();
 
-    private String searchDefaultText = "Try \"Bandung\" or \"Jakarta\"";
-    private String blank = "";
+  private String searchDefaultText = "Try \"Bandung\" or \"Jakarta\"";
+  private String blank = "";
 
-    public MainFrame() {
-        frame.setSize(600, 600);
-        frame.setLocationRelativeTo(null);
-        frame.setResizable(false);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        try {
-            frame.setIconImage(ImageIO.read(new File(InPath.getResourceDirectory("favicon.png"))));
-        } catch (IOException e) {
-            System.out.println("failed to get favicon");
-        }
-
-        panel_main = new JPanel();
-        panel_main.setLayout(new MigLayout());
-        panel_main.addMouseListener(new ListenForMouse());
-
-        /*** search bar ***/
-        textField_search = new JTextField(searchDefaultText, 42);
-        textField_search.addMouseListener(new ListenForMouse());
-        textField_search.addKeyListener(new ListenForKeys());
-        button_search = new JButton();
-        button_search.addMouseListener(new ListenForMouse());
-
-        searchBar = new SearchBar(textField_search, button_search);
-        panel_searchbar = searchBar.getPanel();
-        panel_main.add(panel_searchbar, "span, growx, pushx, gapleft 10, gapright 10");
-
-        /*** result section ***/
-        label_resultText = new JLabel();
-        resultSection = new ResultSection(label_resultText);
-        panel_result = resultSection.getPanel();
-        panel_main.add(panel_result, "span, growx, pushx, , gapleft 10, gapright 10");
-
-        /*** credit ***/
-        JLabel label_credit = new JLabel("created by Shevalda Gracielira");
-        inFont.setBaseFont(label_credit, 12);
-        panel_main.add(label_credit, "span, align 97%, gaptop 6, gapbottom 5");
-
-        /*** frame final setup ***/
-        frame.add(panel_main);
-        frame.pack();
-        frame.setVisible(true);
+  /**
+   * The main frame of the application.
+   * Application started from this frame.
+   * Responsible for displaying search bar and result list.
+   */
+  public MainFrame() {
+    frame.setSize(600, 600);
+    frame.setLocationRelativeTo(null);
+    frame.setResizable(false);
+    frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    try {
+      frame.setIconImage(ImageIO.read(new File(InPath.getResourceDirectory("favicon.png"))));
+    } catch (IOException e) {
+      System.out.println("failed to get favicon");
     }
 
-    private void textFieldInactive(JTextField textField) {
-        textField.setForeground(Color.GRAY);
-        textField.setText(searchDefaultText);
-    }
+    panelMain = new JPanel();
+    panelMain.setLayout(new MigLayout());
+    panelMain.addMouseListener(new ListenForMouse());
 
-    private void textFieldActive(JTextField textField) {
-        textField.setForeground(Color.BLACK);
-        textField.setText(blank);
-    }
+    /* search bar */
+    textFieldSearch = new JTextField(searchDefaultText, 42);
+    textFieldSearch.addMouseListener(new ListenForMouse());
+    textFieldSearch.addKeyListener(new ListenForKeys());
+    buttonSearch = new JButton();
+    buttonSearch.addMouseListener(new ListenForMouse());
 
-    private void checkSearchText() {
-        if (textField_search.getText().equals(searchDefaultText) || textField_search.getText().equals(blank)) {
-            JOptionPane.showMessageDialog(frame, "City cannot be blank.\nTry again.");
-            label_resultText.setVisible(false);
+    searchBar = new SearchBar(textFieldSearch, buttonSearch);
+    panelSearchBar = searchBar.getPanel();
+    panelMain.add(panelSearchBar, "span, growx, pushx, gapleft 10, gapright 10");
+
+    /* result section */
+    labelResultText = new JLabel();
+    resultSection = new ResultSection(labelResultText);
+    panelResult = resultSection.getPanel();
+    panelMain.add(panelResult, "span, growx, pushx, , gapleft 10, gapright 10");
+
+    /* credit */
+    JLabel labelCredit = new JLabel("created by Shevalda Gracielira");
+    inFont.setBaseFont(labelCredit, 12);
+    panelMain.add(labelCredit, "span, align 97%, gaptop 6, gapbottom 5");
+
+    /*** frame final setup ***/
+    frame.add(panelMain);
+    frame.pack();
+    frame.setVisible(true);
+  }
+
+  private void textFieldInactive() {
+    textFieldSearch.setForeground(Color.GRAY);
+    textFieldSearch.setText(searchDefaultText);
+  }
+
+  private void textFieldActive() {
+    textFieldSearch.setForeground(Color.BLACK);
+    textFieldSearch.setText(blank);
+  }
+
+  private void checkSearchText() {
+    if (textFieldSearch.getText().equals(searchDefaultText) || textFieldSearch.getText().equals(blank)) {
+      JOptionPane.showMessageDialog(frame, "City cannot be blank.\nTry again.");
+      labelResultText.setVisible(false);
+    } else {
+      searchInput = textFieldSearch.getText();
+
+      resultSection.removeAllResultList();
+      resultSection.getPanel().setVisible(true);
+
+      SearchProcessor sp = new SearchProcessor(searchInput);
+      if (sp.getResponseCode() == HttpURLConnection.HTTP_UNAUTHORIZED) {
+        JOptionPane.showMessageDialog(frame, "OpenWeatherMap API key invalid\nCheck again the key");
+        labelResultText.setVisible(false);
+      } else if (sp.getCurrentWeather().getBaseCount() == 0) {
+        labelResultText.setText("No result for " + " \"" + searchInput + "\"");
+        labelResultText.setVisible(true);
+      } else {
+        if (sp.getCurrentWeather().getBaseCount() == 1) {
+          labelResultText.setText("1 result for \"" + searchInput + "\"");
         } else {
-            search_input = textField_search.getText();
-
-            resultSection.removeAllResultList();
-            resultSection.getPanel().setVisible(true);
-
-            SearchProcessor sp = new SearchProcessor(search_input);
-            if (sp.getResponseCode() == HttpURLConnection.HTTP_UNAUTHORIZED){
-                JOptionPane.showMessageDialog(frame, "OpenWeatherMap API key invalid\nCheck again the key");
-                label_resultText.setVisible(false);
-            } else if (sp.getCurrentWeather().getBaseCount() == 0) {
-                label_resultText.setText("No result for " + " \"" + search_input + "\"");
-                label_resultText.setVisible(true);
-            } else {
-                if (sp.getCurrentWeather().getBaseCount() == 1) {
-                    label_resultText.setText("1 result for \"" + search_input + "\"");
-                } else {
-                    label_resultText.setText(sp.getCurrentWeather().getBaseCount() + " results for \"" + search_input + "\"");
-                }
-                label_resultText.setVisible(true);
-                resultSection.showResults(sp.getCurrentWeather());
-            }
-            frame.pack();
+          labelResultText.setText(sp.getCurrentWeather().getBaseCount() + " results for \"" + searchInput + "\"");
         }
-
-        textFieldInactive(textField_search);
+        labelResultText.setVisible(true);
+        resultSection.showResults(sp.getCurrentWeather());
+      }
+      frame.pack();
     }
 
-    private class ListenForMouse implements MouseListener {
-        @Override
-        public void mouseClicked(MouseEvent e) {}
+    textFieldInactive();
+  }
 
-        @Override
-        public void mousePressed(MouseEvent e) {
-            if (e.getSource() == textField_search) {
-                if (textField_search.getText().equals(searchDefaultText)) {
-                    textFieldActive(textField_search);
-                }
-            } else if (e.getSource() == button_search) {
-                // search text processed
-                checkSearchText();
-            } else {
-                if (textField_search.getText().equals(blank)) {
-                    textFieldInactive(textField_search);
-                }
-            }
+  private class ListenForMouse implements MouseListener {
+    @Override
+    public void mouseClicked(MouseEvent e) {}
+
+    @Override
+    public void mousePressed(MouseEvent e) {
+      if (e.getSource() == textFieldSearch) {
+        if (textFieldSearch.getText().equals(searchDefaultText)) {
+          textFieldActive();
         }
-
-        @Override
-        public void mouseReleased(MouseEvent e) {}
-
-        @Override
-        public void mouseEntered(MouseEvent e) {}
-
-        @Override
-        public void mouseExited(MouseEvent e) {}
+      } else if (e.getSource() == buttonSearch) {
+        // search text processed
+        checkSearchText();
+      } else {
+        if (textFieldSearch.getText().equals(blank)) {
+          textFieldInactive();
+        }
+      }
     }
 
-    private class ListenForKeys implements KeyListener {
-        @Override
-        public void keyTyped(KeyEvent e) {}
+    @Override
+    public void mouseReleased(MouseEvent e) {}
 
-        @Override
-        public void keyPressed(KeyEvent e) {
-            if (e.getKeyChar() == '\n') {
-                // search text processed
-                checkSearchText();
-            } else {
-                if (textField_search.getText().equals(searchDefaultText)) {
-                    textFieldActive(textField_search);
-                }
-            }
+    @Override
+    public void mouseEntered(MouseEvent e) {}
+
+    @Override
+    public void mouseExited(MouseEvent e) {}
+  }
+
+  private class ListenForKeys implements KeyListener {
+    @Override
+    public void keyTyped(KeyEvent e) {}
+
+    @Override
+    public void keyPressed(KeyEvent e) {
+      if (e.getKeyChar() == '\n') {
+        // search text processed
+        checkSearchText();
+      } else {
+        if (textFieldSearch.getText().equals(searchDefaultText)) {
+          textFieldActive();
         }
-
-        @Override
-        public void keyReleased(KeyEvent e) {}
+      }
     }
+
+    @Override
+    public void keyReleased(KeyEvent e) {}
+  }
 
 }

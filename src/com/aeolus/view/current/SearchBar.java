@@ -2,48 +2,60 @@ package com.aeolus.view.current;
 
 import com.aeolus.utils.InPath;
 import com.aeolus.view.PartPanel;
-import net.miginfocom.swing.MigLayout;
 
-import javax.imageio.ImageIO;
-import javax.swing.*;
-import java.awt.*;
+import java.awt.Color;
+import java.awt.Component;
+import java.awt.Image;
+import java.awt.Insets;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+
+import net.miginfocom.swing.MigLayout;
 
 public class SearchBar extends PartPanel {
-    private JLabel label_logo;
 
-    public SearchBar(JTextField textField_search, JButton button_search) {
-        getPanel().setLayout(new MigLayout("insets 5 0 5 0"));   // top left bottom right
+  /**
+   * Panel that shows the logo and the search bar.
+   * @param textFieldSearch  text field given from Main frame.
+   * @param buttonSearch     button given from Main frame.
+   */
+  public SearchBar(JTextField textFieldSearch, JButton buttonSearch) {
+    getPanel().setLayout(new MigLayout("insets 5 0 5 0"));   // top left bottom right
 
-        /* logo */
-        String logoImageName = "logo.png";
+    /* logo */
+    String logoImageName = "logo.png";
 
-        label_logo = new JLabel();
-        ImageIcon logo = new ImageIcon(InPath.getResourceDirectory(logoImageName));
-        label_logo.setIcon(new ImageIcon(logo.getImage().getScaledInstance(250, 125, Image.SCALE_DEFAULT)));
-        label_logo.setAlignmentX(Component.CENTER_ALIGNMENT);
-        getPanel().add(label_logo, "span, align 50%");
+    JLabel labelLogo = new JLabel();
+    ImageIcon logo = new ImageIcon(InPath.getResourceDirectory(logoImageName));
+    labelLogo.setIcon(new ImageIcon(logo.getImage().getScaledInstance(250, 125, Image.SCALE_DEFAULT)));
+    labelLogo.setAlignmentX(Component.CENTER_ALIGNMENT);
+    getPanel().add(labelLogo, "span, align 50%");
 
-        /* search bar */
-        textField_search.setForeground(Color.GRAY);
-        textField_search.setHorizontalAlignment(JTextField.CENTER);
-        inFont.setBaseFont(textField_search);
-        getPanel().add(textField_search, "push, grow");
+    /* search bar */
+    textFieldSearch.setForeground(Color.GRAY);
+    textFieldSearch.setHorizontalAlignment(JTextField.CENTER);
+    inFont.setBaseFont(textFieldSearch);
+    getPanel().add(textFieldSearch, "push, grow");
 
-        /* search button */
-        String searchImageName = "search.png";
-        try {
-            BufferedImage searchicon = ImageIO.read(new File(InPath.getResourceDirectory(searchImageName)));
-            button_search.setIcon(new ImageIcon(searchicon));
-            button_search.setMargin(new Insets(5,12,5,12));
-            button_search.setBackground(new Color(29, 116, 117));
-            button_search.setBorderPainted(false);
-            getPanel().add(button_search);
-        } catch (IOException e) {
-            System.out.println("failed to find " + searchImageName);
-        }
+    /* search button */
+    String searchImageName = "search.png";
+    try {
+      File file = new File(InPath.getResourceDirectory(searchImageName));
+      BufferedImage searchIcon = ImageIO.read(file);
+      buttonSearch.setIcon(new ImageIcon(searchIcon));
+      buttonSearch.setMargin(new Insets(5,12,5,12));
+      buttonSearch.setBackground(new Color(29, 116, 117));
+      buttonSearch.setBorderPainted(false);
+      getPanel().add(buttonSearch);
+    } catch (IOException e) {
+      System.out.println("failed to find " + searchImageName);
     }
+  }
 
 }

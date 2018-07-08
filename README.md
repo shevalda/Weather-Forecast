@@ -90,5 +90,23 @@ Belum:
  3. Run **Weather-Forecast.jar**. Make sure the .jar file is not moved from the original folder.
  
  ## How to use
- 
- *coming soon* 
+**1.** After opening the application, you will see this main menu.
+    ![]()
+
+Type the city name you want to search. The search is not case sensitive. After you input the city, press ENTER or click the search button.
+    ![]()
+    
+If you search a blank text, the application will give you a reminder.
+    ![]()
+  
+**2.** Wait for a few seconds for the result to show. The result might show a couple of similar names. To know which city you are interested, look at the longitude and latitude of each city.
+    ![] ()
+    
+The search might not return any cities. You might want to review whether you have input the city's name right.
+    ![]() 
+    
+**3.** To see the detailed weather information, click on one of the results. It will show another window containing the information.
+    ![]()
+
+**4.** To see the three-hour forecast, click on **See forecast** button. Another window will show weather informations for the next five days.
+    ![]() 
