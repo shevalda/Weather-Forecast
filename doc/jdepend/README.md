@@ -42,24 +42,24 @@ The range for this metric is 0 to 1, with D=0 indicating a package that is coinc
 
 #### com.aeolus.app
 
-![]()
+![](https://github.com/shevalda/Weather-Forecast/blob/master/doc/jdepend/app.JPG)
 
 #### com.aeolus.app.holder
 
-![]()
+![](https://github.com/shevalda/Weather-Forecast/blob/master/doc/jdepend/app_holder.JPG)
 
 #### com.aeolus.utils
 
-![]()
+![](https://github.com/shevalda/Weather-Forecast/blob/master/doc/jdepend/utils.JPG)
 
 #### com.aeolus.view
 
-![]()
+![](https://github.com/shevalda/Weather-Forecast/blob/master/doc/jdepend/view.JPG)
 
 #### com.aeolus.view.current
 
-![]()
+![](https://github.com/shevalda/Weather-Forecast/blob/master/doc/jdepend/view_current.JPG)
 
 #### com.aeolus.view.future
 
-![]()
+![](https://github.com/shevalda/Weather-Forecast/blob/master/doc/jdepend/view_future.JPG)

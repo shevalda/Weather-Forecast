@@ -8,6 +8,7 @@
     <list default="true" id="981b9d9b-64c6-44a2-849e-65b546adbd26" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/jdepend/JDepend-Analysis.md" beforeDir="false" afterPath="$PROJECT_DIR$/doc/jdepend/README.md" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -35,8 +36,20 @@
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="376">
-                <caret line="110" column="19" lean-forward="true" selection-start-line="110" selection-start-column="19" selection-end-line="110" selection-end-column="19" />
+              <first_editor relative-caret-position="523">
+                <caret line="122" column="20" selection-start-line="122" selection-start-column="20" selection-end-line="122" selection-end-column="20" />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/doc/jdepend/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="330">
+                <caret line="54" column="20" lean-forward="true" selection-start-line="54" selection-start-column="20" selection-end-line="54" selection-end-column="20" />
               </first_editor>
               <second_editor />
             </state>
@@ -135,6 +148,7 @@
         <option value="$PROJECT_DIR$/src/test/com/aeolus/view/CurrentWeatherFrameTest.java" />
         <option value="$PROJECT_DIR$/src/com/aeolus/utils/Api.java" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/doc/jdepend/README.md" />
       </list>
     </option>
   </component>
@@ -181,38 +195,19 @@
         <subPane>
           <expand>
             <path>
-              <item name="Weather-Forecast" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Weather-Forecast" type="462c0819:PsiDirectoryNode" />
+              <item name="fix-final" type="b2602c69:ProjectViewProjectNode" />
+              <item name="fix-final" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="Weather-Forecast" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Weather-Forecast" type="462c0819:PsiDirectoryNode" />
+              <item name="fix-final" type="b2602c69:ProjectViewProjectNode" />
+              <item name="fix-final" type="462c0819:PsiDirectoryNode" />
               <item name="doc" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="Weather-Forecast" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Weather-Forecast" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Weather-Forecast" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Weather-Forecast" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="aeolus" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Weather-Forecast" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Weather-Forecast" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="aeolus" type="462c0819:PsiDirectoryNode" />
-              <item name="utils" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Weather-Forecast" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Weather-Forecast" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="aeolus" type="462c0819:PsiDirectoryNode" />
-              <item name="view" type="462c0819:PsiDirectoryNode" />
+              <item name="fix-final" type="b2602c69:ProjectViewProjectNode" />
+              <item name="fix-final" type="462c0819:PsiDirectoryNode" />
+              <item name="doc" type="462c0819:PsiDirectoryNode" />
+              <item name="jdepend" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -415,7 +410,7 @@
       <workItem from="1530961293000" duration="19187000" />
       <workItem from="1531015023230" duration="1694000" />
       <workItem from="1531016762401" duration="7601000" />
-      <workItem from="1531064276002" duration="229000" />
+      <workItem from="1531064276002" duration="1108000" />
     </task>
     <servers />
   </component>
@@ -431,7 +426,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="161208000" />
+    <option name="totallyTimeSpent" value="162087000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -522,7 +517,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/com/aeolus/app/view/ResultView.java" />
     <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-288" />
@@ -776,11 +770,21 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/doc/jdepend/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="330">
+            <caret line="54" column="20" lean-forward="true" selection-start-line="54" selection-start-column="20" selection-end-line="54" selection-end-column="20" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="376">
-            <caret line="110" column="19" lean-forward="true" selection-start-line="110" selection-start-column="19" selection-end-line="110" selection-end-column="19" />
+          <first_editor relative-caret-position="523">
+            <caret line="122" column="20" selection-start-line="122" selection-start-column="20" selection-end-line="122" selection-end-column="20" />
           </first_editor>
           <second_editor />
         </state>

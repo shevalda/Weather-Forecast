@@ -117,3 +117,7 @@ The search might not return any cities. You might want to review whether you hav
 **4.** To see the three-hour forecast, click on **See forecast** button. Another window will show weather informations for the next five days.
 
 ![](https://github.com/shevalda/Weather-Forecast/blob/master/doc/screenshots/4.JPG) 
+
+## JDepend Analysis
+
+To see the JDepend Analysis, see [here](https://github.com/shevalda/Weather-Forecast/blob/master/doc/jdepend/README.md)
